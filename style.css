@@ -5,8 +5,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    transition: margin-left 0.3s;
+    transition: all 0.3s ease-in-out;
 }
 
 /* Sidebar Styles */
@@ -15,16 +14,14 @@ body {
     background-color: #8b0000;
     position: fixed;
     height: 100%;
+    left: 0;
+    top: 0;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transform: translateX(-100%);
     transition: transform 0.3s ease-in-out;
 }
 
-.sidebar.hidden {
-    transform: translateX(-100%);
-}
-
-/* Sidebar Navigation Links */
 .sidebar h2 {
     color: #ffffff;
     text-align: center;
@@ -67,6 +64,11 @@ body {
     right: 15px;
 }
 
+/* Show sidebar when active */
+.sidebar.active {
+    transform: translateX(0);
+}
+
 /* Sidebar Open Button */
 .open-btn {
     background-color: #8b0000;
@@ -79,7 +81,6 @@ body {
     top: 15px;
     left: 15px;
     border-radius: 5px;
-    display: none;
     transition: 0.3s;
 }
 
@@ -89,16 +90,7 @@ body {
 
 /* Main Content */
 .content {
-    margin-left: 270px;
     padding: 20px;
-    width: calc(100% - 270px);
-    transition: margin-left 0.3s ease-in-out;
-}
-
-/* Adjust content when sidebar is hidden */
-.content.sidebar-hidden {
-    margin-left: 20px;
-    width: calc(100% - 20px);
 }
 
 /* Header */
@@ -145,21 +137,4 @@ footer {
     background-color: #8b0000;
     position: relative;
     width: 100%;
-}
-
-/* Responsive Design */
-@media screen and (max-width: 768px) {
-    .sidebar {
-        width: 200px;
-    }
-
-    .content {
-        margin-left: 220px;
-        width: calc(100% - 220px);
-    }
-
-    .content.sidebar-hidden {
-        margin-left: 10px;
-        width: calc(100% - 10px);
-    }
 }
