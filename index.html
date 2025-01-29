@@ -10,7 +10,7 @@
 <body>
     <!-- Sidebar Navigation -->
     <nav class="sidebar">
-        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+        <button class="toggle-btn" id="close-btn" onclick="toggleSidebar()">✖</button>
         <h2>Navigation</h2>
         <ul>
             <li><a href="#intro">What is Topical Talk?</a></li>
@@ -19,6 +19,9 @@
             <li><a href="#stars">How do I earn stars?</a></li>
         </ul>
     </nav>
+
+    <!-- Sidebar Open Button (Hidden by Default) -->
+    <button class="open-btn" id="open-btn" onclick="toggleSidebar()">☰</button>
 
     <!-- Main Content -->
     <div class="content">
@@ -50,7 +53,7 @@
         </main>
 
         <footer>
-            <p>© 2025 Topical Talk Beginner's Guide</p>
+            <p>© 2025 Topical Talk Guide</p>
         </footer>
     </div>
 </body>
