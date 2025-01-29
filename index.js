@@ -15,12 +15,5 @@ document.addEventListener("DOMContentLoaded", function() {
 // Sidebar toggle function
 function toggleSidebar() {
     const sidebar = document.querySelector('.sidebar');
-    const content = document.querySelector('.content');
-    const openBtn = document.getElementById('open-btn');
-    
-    sidebar.classList.toggle('hidden');
-    content.classList.toggle('sidebar-hidden');
-
-    // Show the open button only when the sidebar is hidden
-    openBtn.style.display = sidebar.classList.contains('hidden') ? "block" : "none";
+    sidebar.classList.toggle('active');
 }
