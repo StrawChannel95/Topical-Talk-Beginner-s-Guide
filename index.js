@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Topical Talk Beginner's Guide Loaded!");
 
-    // Get sidebar and buttons
+    // Get elements
     const sidebar = document.querySelector('.sidebar');
     const openBtn = document.querySelector('.open-btn');
     const closeBtn = document.querySelector('.toggle-btn');
@@ -9,15 +9,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Hide sidebar on load
     sidebar.classList.remove('active');
+    closeBtn.style.display = "none"; // Hide close button initially
 
     // Function to toggle sidebar
     function toggleSidebar(show) {
         if (show) {
             sidebar.classList.add("active");
-            openBtn.style.display = "none"; // Hide open button
+            openBtn.style.display = "none"; // Hide ☰ button
+            closeBtn.style.display = "block"; // Show ✖ button
         } else {
             sidebar.classList.remove("active");
-            openBtn.style.display = "block"; // Show open button
+            openBtn.style.display = "block"; // Show ☰ button
+            closeBtn.style.display = "none"; // Hide ✖ button
         }
     }
 
