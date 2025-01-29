@@ -1,3 +1,11 @@
+.sidebar {
+    transform: translateX(-100%); /* Sidebar starts off-screen */
+}
+
+.sidebar.active {
+    transform: translateX(0); /* Sidebar slides in */
+}
+
 /* General Page Styles */
 body {
     background-color: #121212;
