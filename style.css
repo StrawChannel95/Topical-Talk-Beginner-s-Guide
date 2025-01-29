@@ -1,12 +1,61 @@
-/* Dark theme with bright red highlights */
+/* General Page Styles */
 body {
     background-color: #121212;
     color: #ffffff;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    display: flex;
 }
 
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: #8b0000;
+    position: fixed;
+    height: 100%;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar h2 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #ffdddd;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 8px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+    background-color: #ff4444;
+    color: #ffffff;
+}
+
+/* Main Content Styling */
+.content {
+    margin-left: 270px;
+    padding: 20px;
+    width: calc(100% - 270px);
+}
+
+/* Header */
 header {
     background-color: #8b0000;
     padding: 15px;
@@ -17,6 +66,7 @@ h1 {
     color: #ffffff;
 }
 
+/* Sections */
 main {
     padding: 20px;
 }
@@ -26,6 +76,7 @@ section {
     padding: 15px;
     margin: 15px 0;
     border-radius: 8px;
+    scroll-margin-top: 50px; /* Ensures smooth scrolling stops at the right position */
 }
 
 h2 {
@@ -41,11 +92,33 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Footer */
 footer {
     text-align: center;
     padding: 10px;
     background-color: #8b0000;
-    position: fixed;
+    position: relative;
     width: 100%;
-    bottom: 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 100px;
+        padding: 10px;
+    }
+
+    .sidebar h2 {
+        font-size: 14px;
+    }
+
+    .sidebar ul li a {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .content {
+        margin-left: 120px;
+        width: calc(100% - 120px);
+    }
 }
