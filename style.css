@@ -24,6 +24,7 @@ body {
     transform: translateX(-100%);
 }
 
+/* Sidebar Navigation Links */
 .sidebar h2 {
     color: #ffffff;
     text-align: center;
@@ -54,7 +55,7 @@ body {
     color: #ffffff;
 }
 
-/* Toggle Button */
+/* Sidebar Close Button */
 .toggle-btn {
     background: none;
     border: none;
@@ -66,6 +67,27 @@ body {
     right: 15px;
 }
 
+/* Sidebar Open Button */
+.open-btn {
+    background-color: #8b0000;
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    border-radius: 5px;
+    display: none;
+    transition: 0.3s;
+}
+
+.open-btn:hover {
+    background-color: #ff4444;
+}
+
+/* Main Content */
 .content {
     margin-left: 270px;
     padding: 20px;
