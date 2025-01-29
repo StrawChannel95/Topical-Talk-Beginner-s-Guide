@@ -10,20 +10,31 @@ document.addEventListener("DOMContentLoaded", function () {
     // Hide sidebar on load
     sidebar.classList.remove('active');
 
+    // Function to toggle sidebar
+    function toggleSidebar(show) {
+        if (show) {
+            sidebar.classList.add("active");
+            openBtn.style.display = "none"; // Hide open button
+        } else {
+            sidebar.classList.remove("active");
+            openBtn.style.display = "block"; // Show open button
+        }
+    }
+
     // Open sidebar
     openBtn.addEventListener("click", function () {
-        sidebar.classList.add("active");
+        toggleSidebar(true);
     });
 
     // Close sidebar
     closeBtn.addEventListener("click", function () {
-        sidebar.classList.remove("active");
+        toggleSidebar(false);
     });
 
     // Close sidebar when clicking a menu link
     links.forEach(link => {
         link.addEventListener("click", function () {
-            sidebar.classList.remove("active");
+            toggleSidebar(false);
         });
     });
 });
