@@ -11,3 +11,15 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+// Sidebar toggle function
+function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    const content = document.querySelector('.content');
+    sidebar.classList.toggle('hidden');
+    content.classList.toggle('sidebar-hidden');
+
+    // Change button icon
+    const btn = document.querySelector('.toggle-btn');
+    btn.textContent = sidebar.classList.contains('hidden') ? '☰' : '✖';
+}
