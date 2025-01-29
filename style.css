@@ -1,0 +1,51 @@
+/* Dark theme with bright red highlights */
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #8b0000;
+    padding: 15px;
+    text-align: center;
+}
+
+h1 {
+    color: #ffffff;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    background-color: #1e1e1e;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #ff4444;
+}
+
+a {
+    color: #ff4444;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #8b0000;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
