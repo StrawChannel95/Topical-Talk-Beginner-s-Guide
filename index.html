@@ -8,20 +8,20 @@
     <script defer src="index.js"></script>
 </head>
 <body>
-    <!-- Sidebar Navigation -->
-    <nav class="sidebar">
-        <button class="toggle-btn" id="close-btn" onclick="toggleSidebar()">✖</button>
+    <!-- Sidebar Navigation (Starts Hidden) -->
+    <nav class="sidebar hidden">
+        <button class="toggle-btn" onclick="toggleSidebar()">✖</button>
         <h2>Navigation</h2>
         <ul>
-            <li><a href="#intro">What is Topical Talk?</a></li>
-            <li><a href="#festival">What do I do in the Festival?</a></li>
-            <li><a href="#begin">Where do I begin?</a></li>
-            <li><a href="#stars">How do I earn stars?</a></li>
+            <li><a href="#intro" onclick="toggleSidebar()">What is Topical Talk?</a></li>
+            <li><a href="#festival" onclick="toggleSidebar()">What do I do in the Festival?</a></li>
+            <li><a href="#begin" onclick="toggleSidebar()">Where do I begin?</a></li>
+            <li><a href="#stars" onclick="toggleSidebar()">How do I earn stars?</a></li>
         </ul>
     </nav>
 
-    <!-- Sidebar Open Button (Hidden by Default) -->
-    <button class="open-btn" id="open-btn" onclick="toggleSidebar()">☰</button>
+    <!-- Sidebar Open Button (Always Visible) -->
+    <button class="open-btn" onclick="toggleSidebar()">☰</button>
 
     <!-- Main Content -->
     <div class="content">
