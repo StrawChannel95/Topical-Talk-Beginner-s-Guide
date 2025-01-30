@@ -4,57 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Topical Talk Beginner's Guide</title>
-    <link rel="stylesheet" href="style.css">
-    <script defer src="index.js"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Sidebar Navigation (Starts Hidden) -->
-    <nav class="sidebar hidden">
-        <button class="toggle-btn" onclick="toggleSidebar()">✖</button>
-        <h2>Navigation</h2>
-        <ul>
-            <li><a href="#intro" onclick="toggleSidebar()">What is Topical Talk?</a></li>
-            <li><a href="#festival" onclick="toggleSidebar()">What do I do in the Festival?</a></li>
-            <li><a href="#begin" onclick="toggleSidebar()">Where do I begin?</a></li>
-            <li><a href="#stars" onclick="toggleSidebar()">How do I earn stars?</a></li>
-        </ul>
-    </nav>
-
-    <!-- Sidebar Open Button (Always Visible) -->
-    <button class="open-btn" onclick="toggleSidebar()">☰</button>
-
-    <!-- Main Content -->
-    <div class="content">
-        <header>
-            <h1>Topical Talk Beginner's Guide</h1>
-        </header>
-        
-        <main>
-            <section id="intro">
-                <h2>What is "Topical Talk"?</h2>
-                <p>The <strong>Topical Talk Festival</strong> is an educational event created by <em>The Economist</em> that encourages young people to engage in conversations about global issues featured in the news, connecting them with peers from around the world.</p>
-            </section>
-
-            <section id="festival">
-                <h2>What do I do in the Festival?</h2>
-                <p>Your goal is to write high-quality comments to earn as many stars as possible. At the end of the Festival, you’ll participate in the <strong>Standpoint</strong>, where you share your final opinion on a chosen topic.</p>
-                <p>Schools that actively participate and rank on the leaderboard can win prizes. Check out the full list of prizes <a href="https://talk.economistfoundation.org/festivals/festival-2025/awards/" target="_blank">here</a>.</p>
-            </section>
-
-            <section id="begin">
-                <h2>Where do I begin?</h2>
-                <p>To start, comment on topics that interest you. Always prioritize <strong>quality over quantity</strong>. Thoughtful, well-written comments stand out the most!</p>
-            </section>
-
-            <section id="stars">
-                <h2>How do I earn stars?</h2>
-                <p>Stars are awarded for original, high-quality comments. Focus on being unique and insightful. Don’t stress too much about stars—write about what genuinely interests you!</p>
-            </section>
-        </main>
-
-        <footer>
-            <p>© 2025 Topical Talk Guide | Built for GitHub Pages</p>
-        </footer>
+    <div class="toggle-btn" onclick="toggleSidebar()">
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
+
+    <div id="sidebar">
+        <ul>
+            <li><a href="#top">Home</a></li>
+            <li><a href="#what-is">What is Topical Talk?</a></li>
+            <li><a href="#what-do">What to Do</a></li>
+            <li><a href="#earn-stars">Earning Stars</a></li>
+            <li><a href="#begin">Getting Started</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <a href="https://github.com/StrawChannel95/Topical-Talk-Beginner-s-Guide" class="github-link" target="_blank">GitHub</a>
+        
+        <h1 id="top">Topical Talk Beginner's Guide</h1>
+        <p>Welcome to the beginner's guide for the <a href="https://talk.economistfoundation.org/festivals/festival-2025/" target="_blank">Topical Talk Festival</a>. This guide will walk you through everything you need to know about the Festival, from earning stars to winning the weekly competition. The chapters are organized for your convenience and ease of use.</p>
+
+        <h2 id="what-is">What is "Topical Talk"?</h2>
+        <p>The <strong>Topical Talk Festival</strong> is an educational event created by <em>The Economist</em> that encourages young people to engage in conversations about global issues featured in the news, connecting them with peers from around the world.</p>
+
+        <h2 id="what-do">What do I do in the Festival?</h2>
+        <p>During the Festival, your main goal is to write high-quality comments to earn as many stars as possible. At the end of the Festival, you’ll participate in the <em>Standpoint</em>, where you share your final opinion on a chosen topic. Schools that actively participate and rank on the leaderboard can win prizes. You can find the full list of prizes <a href="https://talk.economistfoundation.org/festivals/festival-2025/awards/" target="_blank">here</a>.</p>
+
+        <h2 id="begin">Where do I begin?</h2>
+        <p>To get started, simply begin commenting on topics that interest you or that you feel knowledgeable about. Remember to always prioritize <strong>quality over quantity</strong>, as thoughtful, well-written comments stand out the most.</p>
+
+        <h2 id="earn-stars">How do I earn stars?</h2>
+        <p>Stars are awarded for high-quality, original comments. If your comments aren't earning stars, focus on being more original and adding unique insights. Originality increases your chances of being noticed and earning recognition. However, don’t stress too much about stars—write about what genuinely interests you. Enjoy the process rather than trying to optimize every detail.</p>
+    </div>
+
+    <script src="index.js"></script>
 </body>
 </html>
