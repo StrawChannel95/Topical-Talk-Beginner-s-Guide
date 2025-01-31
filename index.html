@@ -6,7 +6,7 @@
     <title>Topical Talk Festival 2025 - Beginner's Guide</title>
     <meta name="description" content="Official beginner's guide for the Topical Talk Festival 2025 - Learn how to participate, earn stars, and win competitions.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iIzAwMDAwMCIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LXNpemU9IjQ4IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjRkYwMDAwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkb21pbmFudC1iYXNlbGluZT0ibWlkZGxlIj5UPC90ZXh0Pjwvc3ZnPg==">
     <style>
         :root {
             --primary-color: #FF0000;
@@ -27,7 +27,6 @@
             line-height: 1.6;
         }
 
-        /* Header Styles */
         .header {
             text-align: center;
             padding: 2rem;
@@ -42,7 +41,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Sidebar Styles */
         .sidebar {
             position: fixed;
             left: -250px;
@@ -53,6 +51,7 @@
             border-right: 2px solid var(--primary-color);
             transition: 0.3s;
             z-index: 1000;
+            padding: 20px;
         }
 
         .sidebar.active {
@@ -67,9 +66,28 @@
             color: var(--primary-color);
             cursor: pointer;
             z-index: 1001;
+            transition: 0.3s;
         }
 
-        /* Main Content */
+        .close-toggle {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            z-index: 1001;
+            display: none;
+        }
+
+        .sidebar.active + .sidebar-toggle {
+            display: none;
+        }
+
+        .sidebar.active ~ .close-toggle {
+            display: block;
+        }
+
         .main-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -77,7 +95,6 @@
             transition: 0.3s;
         }
 
-        /* Content Sections */
         section {
             margin-bottom: 3rem;
             padding: 1.5rem;
@@ -104,7 +121,6 @@
             text-decoration: underline;
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .main-content {
                 padding: 1rem;
@@ -114,16 +130,30 @@
                 font-size: 2rem;
             }
         }
+
+        .sidebar-content ul {
+            list-style: none;
+            padding-left: 1rem;
+        }
+
+        .sidebar-content li {
+            margin: 1rem 0;
+        }
+
+        .sidebar-content a {
+            color: var(--text-color);
+            transition: color 0.3s;
+        }
+
+        .sidebar-content a:hover {
+            color: var(--primary-color);
+        }
     </style>
 </head>
 <body>
-    <!-- Favicon (replace with actual favicon) -->
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;,">
-
-    <!-- Sidebar Toggle -->
     <div class="sidebar-toggle" onclick="toggleSidebar()">☰</div>
+    <div class="close-toggle" onclick="toggleSidebar()">✕</div>
 
-    <!-- Sidebar -->
     <nav class="sidebar">
         <div class="sidebar-content">
             <h3>Guide Navigation</h3>
@@ -136,7 +166,6 @@
         </div>
     </nav>
 
-    <!-- Main Content -->
     <main class="main-content">
         <header class="header">
             <h1 class="title">Topical Talk Festival 2025</h1>
@@ -166,24 +195,36 @@
 
     <script>
         function toggleSidebar() {
-            document.querySelector('.sidebar').classList.toggle('active');
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.classList.toggle('active');
         }
 
-        // Close sidebar when clicking outside
         document.addEventListener('click', function(event) {
             const sidebar = document.querySelector('.sidebar');
             const sidebarToggle = document.querySelector('.sidebar-toggle');
+            const closeToggle = document.querySelector('.close-toggle');
             
-            if (!sidebar.contains(event.target) && !sidebarToggle.contains(event.target)) {
+            if (!sidebar.contains(event.target) && 
+                !sidebarToggle.contains(event.target) && 
+                !closeToggle.contains(event.target)) {
                 sidebar.classList.remove('active');
             }
         });
 
-        // Close sidebar on ESC key
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 document.querySelector('.sidebar').classList.remove('active');
             }
+        });
+
+        // Smooth scroll for sidebar links
+        document.querySelectorAll('.sidebar-content a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                section.scrollIntoView({ behavior: 'smooth' });
+                document.querySelector('.sidebar').classList.remove('active');
+            });
         });
     </script>
 </body>
